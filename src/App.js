@@ -5,17 +5,18 @@ import SearchPhoto from './components/SearchPhoto';
 import DeletePhoto from './components/DeletePhoto';
 import ViewPhoto from './components/ViewPhoto';
 import NavBar from './components/NavBar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      <AddPhoto/>
-      <SearchPhoto/>
-      <DeletePhoto/>
-      <ViewPhoto/>
-      <NavBar/>
-      
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/'element={<AddPhoto/>}/>
+      <Route path='/search'element={<SearchPhoto/>}/>
+      <Route path='/delete'element={<DeletePhoto/>}/>
+      <Route path='/view'element={<ViewPhoto/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
